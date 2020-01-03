@@ -9,6 +9,16 @@ public class ConsoleLogger implements ILogger {
     private final String ERROR = "ERROR";
     private final String logTemplate = "%s | %s";
 
+    public ConsoleLogger() {
+        separatorLine = "----- ----- ----- -----";
+        headerLine = "===== ===== ===== =====";
+    }
+
+    public ConsoleLogger(String separatorLine, String headerLine) {
+        this.separatorLine = separatorLine;
+        this.headerLine = headerLine;
+    }
+
     @Override
     public void setSeparatorLine(String separatorLine) {
         this.separatorLine = separatorLine;
@@ -21,7 +31,7 @@ public class ConsoleLogger implements ILogger {
 
     @Override
     public void separator() {
-        writeLine("---");
+        writeLine(separatorLine);
     }
 
     @Override
