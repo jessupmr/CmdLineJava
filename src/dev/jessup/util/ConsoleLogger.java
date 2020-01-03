@@ -4,9 +4,6 @@ public class ConsoleLogger implements ILogger {
 
     private String separatorLine;
     private String headerLine;
-    private final String INFO = "INFO";
-    private final String WARNING = "WARN";
-    private final String ERROR = "ERROR";
     private final String logTemplate = "%s | %s";
 
     public ConsoleLogger() {
@@ -62,17 +59,17 @@ public class ConsoleLogger implements ILogger {
 
     @Override
     public void info(String message) {
-        writeLine(String.format(logTemplate, INFO, message));
+        writeLine(String.format(logTemplate, "INFO", message));
     }
 
     @Override
     public void warning(String message) {
-        writeLine(String.format(logTemplate, WARNING, message));
+        writeLine(String.format(logTemplate, "WARNING", message));
     }
 
     @Override
     public void error(String message) {
-        writeLine(String.format(logTemplate, ERROR, message));
+        writeLine(String.format(logTemplate, "ERROR", message));
     }
 
     private void writeLine(String message) {
